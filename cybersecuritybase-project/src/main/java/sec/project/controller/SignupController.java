@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import sec.project.domain.Signup;
 import sec.project.repository.SignupRepository;
 
@@ -14,11 +15,18 @@ public class SignupController {
     @Autowired
     private SignupRepository signupRepository;
 
+    //@RequestMapping(value = "/login", method = RequestMethod.GET)
+    //public String loadLogin() {
+    //public String defaultResponseBody() {
+    //    return "login";
+    //}
+    
     @RequestMapping("*")
     public String defaultMapping() {
-        return "redirect:/form";
+    //public String defaultResponseBody() {
+        return "redirect:/items";
     }
-
+    
     @RequestMapping(value = "/form", method = RequestMethod.GET)
     public String loadForm() {
         return "form";
